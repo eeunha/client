@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /*
+        5. 그룹 선택자
+        - 2개 이상의 선택자를 한번에 선언하는 방법
+        
+        선택자, 선택자, 선택자 {
+          구현부;
+        }
+      */
+
+      /* h1,
+      h2.sub-title {
+        color: blueviolet;
+      } */
+
+      /* h1,
+      h2,
+      p {
+        color: greenyellow;
+      } */
+
+      /* h1#main-title,
+      h2.sub-title,
+      p.employee-name {
+        color: green;
+      } */
+
+      /* h1#main-title {
+        color: red;
+      }
+
+      h2.sub-title {
+        color: blue;
+      }
+
+      p.employee-name {
+        color: blue;
+      }
+
+      p.intro {
+        color: powderblue;
+      } */
+
+      #main-title {
+        /* 태그명 생략 가능. 태그명 대신 *가 들어감. *도 생략 가능. id는 유일하기 때문에 바로 식별자 사용 */
+        color: blue;
+      }
+
+      .sub-title {
+        /* 태그명 생략 가능. 하지만 태그명이 달라도 적용되어서 조심해야한다. */
+        /* 태그명 붙으면 해당되는 태그에 클래스명이 같아야만 적용된다. */
+        color: orange;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ex04_selector.html -->
+    <h1 id="main-title">회사 소개</h1>
+    <!-- 케밥 표기법 -->
+
+    <h3 class="sub-title">소제목입니다.</h3>
+
+    <h2 class="sub-title">대표 이사</h2>
+    <p class="employee-name">홍길동</p>
+    <p class="intro">
+      인삿말이 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구
+      저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구
+      저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구
+    </p>
+
+    <h2 class="sub-title">기획 팀장</h2>
+    <p class="employee-name">아무개</p>
+    <p class="intro">
+      인삿말이 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구
+      저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구
+      저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구
+    </p>
+
+    <h2 class="sub-title">운영 부장</h2>
+    <p class="employee-name">하하하</p>
+    <p class="intro">
+      인삿말이 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구
+      저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구
+      저쩌구 어쩌구 저쩌구 어쩌구 저쩌구 어쩌구 저쩌구
+    </p>
+
+    <hr />
+
+    <h1>또 다른 제목</h1>
+    <h2>또 다른 부제목</h2>
+    <p>또 다른 컨텐츠</p>
+  </body>
+</html>
