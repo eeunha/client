@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      /*
+        디자이너 보유 회사
+        1. 사람
+          - 디자이너 > (이미지) > 개발자
+          - 100개 전달 vs 1개 전달
+          - 파일 네이밍?
+
+        2. 성능
+          - 100번 > Roundtrip (비싸다)
+          - 1번 > Roundtrop (싸다)
+          
+      */
+      #cafe {
+        background-image: url(../asset/images/sp_main.6519c842.png);
+        background-position: -727px -299px;
+        width: 50px;
+        height: 50px;
+      }
+
+      /* roll-up
+         roll-over 이미지 */
+      #cafe:hover {
+        background-position: -727px -249px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ex36_background.html -->
+
+    <!-- <img src="../asset/images/sp_main.6519c842.png" /> -->
+
+    <div id="cafe"></div>
+  </body>
+</html>
