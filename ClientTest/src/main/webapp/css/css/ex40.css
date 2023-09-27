@@ -1,0 +1,12 @@
+/* ex40.css */
+
+html {
+  /* 배경은 html에 주기 */
+  background-image: url(../../asset/images/gimbal.jpg);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+
+  /* 배경 고정 */
+  background-attachment: fixed;
+}
