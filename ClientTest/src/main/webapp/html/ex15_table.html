@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-	<!-- ex15_table.html -->
-	<!-- 
+  <head>
+    <meta charset="UTF-8" />
+    <title>Insert title here</title>
+  </head>
+  <body>
+    <!-- ex15_table.html -->
+    <!-- 
 		 표, Table
 		 
 		 1. <table>
@@ -27,62 +27,59 @@
 		 	- 제목을 출력하는 셀 역할
 	-->
 
-	<h1>2행 2열 테이블</h1>
-	<table border="1" width="200" height="200">
-		<tr>
-			<td>1</td>
-			<td>2</td>
-		</tr>
-		<tr>
-			<td>3</td>
-			<td>4</td>
-		</tr>
-	</table>
-	
-	
-	<!-- *** 모든 셀의 너비의 합 == 테이블 너비 -->
-	<!-- *** 모든 셀의 높이의 합 == 테이블 높이 -->
-	
-	<h1>2행 2열 테이블</h1>
-	<table border="1" width="200" height="200">
-		<tr> <!-- 여기는 width, height 안씀 -->
-			<td width="100" height="100">1</td> <!-- 테두리 빼고 100임. 숫자가 안맞으면 비율로 적용 -->
-			<td width="100">2</td>
-		</tr>
-		<tr>
-			<td height="100">3</td> <!-- 테이블이 늘어남. 보더 3개 높이만큼 추가로 늘어남. 너비는x 높이는 늘어남 -->
-			<td>4</td>
-		</tr>
-	</table>
-	
-	
-	<h1>2행 2열 테이블</h1>
-	<table border="1" width="200" height="200">
-		<tr>
-			<td align="center" valign="bottom">1</td>
-			<td>2</td>
-		</tr>
-		<tr>
-			<td>3</td>
-			<td>4</td>
-		</tr>
-	</table>
-	
-	
-	<h1>2행 2열 테이블</h1>
-	<table border="1" width="200" height="200" bgcolor="yellow"> <!-- 테두리도 포함(노랑) -->
-		<tr bgcolor="lavender">
-			<td bgcolor="purple">1</td>
-			<td>2</td>
-		</tr>
-		<tr>
-			<td background="images/cat.jpg">3</td>
-			<td>4</td>
-		</tr>
-	</table>
-	
-	
-	
-	
-</body>
+    <h1>2행 2열 테이블</h1>
+    <table border="1" width="200" height="200">
+      <tr>
+        <td>1</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>4</td>
+      </tr>
+    </table>
+
+    <!-- *** 모든 셀의 너비의 합 == 테이블 너비 -->
+    <!-- *** 모든 셀의 높이의 합 == 테이블 높이 -->
+
+    <h1>2행 2열 테이블</h1>
+    <table border="1" width="200" height="200">
+      <tr>
+        <!-- 여기는 width, height 안씀 -->
+        <td width="100" height="100">1</td>
+        <!-- 테두리 빼고 100임. 숫자가 안맞으면 비율로 적용 -->
+        <td width="100">2</td>
+      </tr>
+      <tr>
+        <td height="100">3</td>
+        <!-- 테이블이 늘어남. 보더 3개 높이만큼 추가로 늘어남. 너비는x 높이는 늘어남 -->
+        <td>4</td>
+      </tr>
+    </table>
+
+    <h1>2행 2열 테이블</h1>
+    <table border="1" width="200" height="200">
+      <tr>
+        <td align="center" valign="bottom">1</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>4</td>
+      </tr>
+    </table>
+
+    <h1>2행 2열 테이블</h1>
+    <table border="1" width="200" height="200" bgcolor="yellow">
+      <!-- 테두리도 포함(노랑) -->
+      <tr bgcolor="lavender">
+        <td bgcolor="purple">1</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td background="images/cat.jpg">3</td>
+        <td>4</td>
+      </tr>
+    </table>
+  </body>
 </html>

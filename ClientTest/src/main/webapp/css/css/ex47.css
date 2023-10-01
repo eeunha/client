@@ -1,0 +1,67 @@
+/* ex47.css */
+
+#list {
+  border: 1px solid black;
+  width: 1200px;
+}
+
+#list .box {
+  width: 100px;
+  height: 50px;
+  margin: 15px 0;
+  transition-property: margin-left;
+  transition-duration: 5s;
+}
+
+#box1 {
+  background-color: tomato;
+  /* transition-delay: 0s; */
+  transition-timing-function: linear;
+  /* 등속 */
+}
+#box2 {
+  background-color: orange;
+  /* transition-delay: 0.5s */
+  transition-timing-function: ease;
+  /* 처음에 천천히 시작하여 빨라지며, 마지막에 다시 느려집니다. */
+}
+#box3 {
+  background-color: gold;
+  /* transition-delay: 1s */
+  transition-timing-function: ease-in;
+  /* 처음에 천천히 시작하여 마지막에 속도를 높여 끝납니다. */
+}
+#box4 {
+  background-color: yellowgreen;
+  /* transition-delay: 1.5s */
+  transition-timing-function: ease-out;
+  /* 처음에 빠른 속도에서 시작하여 마지막에 천천히 속도를 줄여 끝납니다. */
+}
+#box5 {
+  background-color: cornflowerblue;
+  /* transition-delay: 2s */
+  transition-timing-function: ease-in-out;
+  /* 천천히 시작되어 정상 속도가 되었다가 마지막에 느려집니다. */
+}
+
+#list:hover .box {
+  margin-left: 1100px;
+}
+
+/* q08 */
+#icon {
+  border: 10px solid black;
+  width: 126px;
+  height: 126px;
+  margin-bottom: 100px;
+  overflow: hidden;
+}
+
+#icon:hover img {
+  transform: translate(0px, 0px);
+}
+
+#icon img {
+  transform: translate(0px, 126px);
+  transition: all 0.5s;
+}

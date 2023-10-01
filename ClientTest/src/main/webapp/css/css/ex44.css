@@ -1,0 +1,61 @@
+/* ex44.css */
+
+#main-menu > img,
+#side-menu > img,
+#footer-menu > img {
+  transition-property: transform;
+  transition-duration: 0.7s;
+}
+
+#main-menu {
+  border: 0px solid black;
+
+  /* 공백 없이 붙이기 */
+  font-size: 0;
+
+  width: 630px;
+  margin: 0 auto;
+  transform: translate(0px, -100px);
+}
+
+/* #main-menu:hover {
+  transform: translate(0px, -10px);
+} */
+
+#main-menu > img:hover {
+  /* 위와 같이 -10을 주면 위로 올라간다. 이미지의 현재 위치가 (0, 0)이기 때문이다. */
+  transform: translate(0px, 90px);
+}
+
+/* 세로 메뉴 */
+#side-menu {
+  border: 0px solid black;
+  font-size: 0;
+  width: 126px;
+  /* margin: 0 auto; */
+  transform: translate(-105px, 0px);
+}
+
+#side-menu > img:hover {
+  transform: translate(90px, 0px);
+}
+
+/* 하단 메뉴 */
+#footer-menu {
+  position: fixed;
+  bottom: 0;
+
+  /* left, right 같은 값 주면 중앙정렬된다. */
+  left: 0;
+  right: 0;
+
+  border: 0px solid black;
+  font-size: 0;
+  width: 630px;
+  margin: 0 auto;
+  transform: translate(0px, 100px);
+}
+
+#footer-menu > img:hover {
+  transform: translate(0px, -90px);
+}
