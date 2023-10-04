@@ -24,7 +24,7 @@
       main {
         display: grid;
         grid-template-rows: 50px 200px auto;
-        grid-template-columns: 200px auto;
+        grid-template-columns: 200px minmax(800px, 1fr);
 
         /* 안먹는 이유 - 자기 부모의 높이를 채워라 */
         /* height: 100%; */
@@ -96,10 +96,62 @@
         display: grid;
         grid-template-columns: repeat(4, 1fr);
         grid-template-rows: repeat(2, 1fr);
+        gap: 20px;
+        padding: 10px;
       }
 
       #list > div {
         background-color: yellowgreen;
+      }
+
+      #list > div > img {
+        display: block;
+        margin: 20px auto;
+        border: 3px solid white;
+        padding: 3px;
+      }
+
+      #list > div > div {
+        margin: 30px;
+        font-size: 14px;
+        color: #555;
+      }
+
+      /* 스마트폰 ~ 태블릿 세로 */
+      @media screen and (max-width: 768px) {
+        /* * {
+          font-family: 궁서체;
+        } */
+
+        main {
+          display: grid;
+          grid-template-columns: 1fr;
+          grid-template-rows: 210px 50px 200px auto;
+          height: 100vh;
+        }
+
+        #menu {
+          grid-row: auto;
+        }
+
+        #menu ul {
+          display: flex;
+          justify-content: center;
+          margin: 0px;
+        }
+
+        #menu li {
+          list-style-type: none;
+          margin: 0px 7px;
+        }
+
+        #menu hr {
+          display: none;
+        }
+
+        #list {
+          grid-template-columns: repeat(3, 1fr);
+        }
       }
     </style>
   </head>
