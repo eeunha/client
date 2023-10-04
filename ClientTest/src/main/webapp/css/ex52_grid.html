@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      /*
+            html {
+              border: 10px solid violet;
+              height: 100%; /* 부모: 브라우저 */
+      /* } */
+
+      /* body { */
+      /* border: 10px solid blue; */
+      /* height: 100%; 부모: html */
+      /* } */
+
+      main {
+        display: grid;
+        grid-template-rows: 50px 200px auto;
+        grid-template-columns: 200px auto;
+
+        /* 안먹는 이유 - 자기 부모의 높이를 채워라 */
+        /* height: 100%; */
+
+        /* viewport-height : 보고있는 브라우저 화면을 다 채워라  (요즘엔 이렇게 사용) */
+        height: 100vh;
+      }
+
+      #menu {
+        background-color: orange;
+        grid-row: 1/4;
+        text-align: center;
+      }
+
+      #menu > h1 {
+        color: white;
+      }
+
+      #menu > hr {
+        /* 기본이 2px */
+        border: 0;
+        border-bottom: 1px dashed white;
+      }
+
+      #menu > ul {
+        padding: 0; /*bullet 사라짐*/
+        color: white;
+      }
+
+      #menu > div {
+        color: white;
+        font-size: 14px;
+        padding: 20px;
+      }
+
+      #search {
+        background-color: gold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #search input[type="text"] {
+        border: 1px solid yellow;
+        width: 430px;
+        padding: 5px;
+        outline: none;
+      }
+
+      #search button {
+        width: 100px;
+        height: 27px;
+        border: 1px solid yellow;
+        background-color: yellow;
+      }
+
+      #banner {
+        background-color: greenyellow;
+      }
+
+      #banner > img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+
+      #list {
+        background-color: cornflowerblue;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(2, 1fr);
+      }
+
+      #list > div {
+        background-color: yellowgreen;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ex52_grid.html -->
+    <main>
+      <div id="menu">
+        <h1>Study</h1>
+
+        <ul>
+          <li>Java</li>
+          <li>Oracle</li>
+          <li>HTML</li>
+          <li>Css</li>
+          <li>JavaScript</li>
+        </ul>
+
+        <hr />
+
+        <ul>
+          <li>Class</li>
+          <li>Method</li>
+          <li>Interface</li>
+          <li>Property</li>
+          <li>Attribute</li>
+        </ul>
+
+        <hr />
+
+        <div>
+          &copy;Copyright test.com<br />
+          All rights reserved.
+        </div>
+      </div>
+
+      <div id="search">
+        <input type="text" />
+        <button>Search</button>
+      </div>
+
+      <div id="banner">
+        <img src="../asset/images/gimbal.jpg" />
+      </div>
+
+      <div id="list">
+        <div>
+          <img src="../asset/images/rect_icon01.png" alt="" />
+          <div>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quia
+            dignissimos, consequuntur et vitae molestiae alias quo mollitia,
+            perferendis temporibus sed expedita incidunt laudantium optio. Unde
+            fugit ipsum pariatur natus voluptatibus?
+          </div>
+        </div>
+        <div>
+          <img src="../asset/images/rect_icon02.png" alt="" />
+          <div>
+            Ea rerum eaque ipsa asperiores corporis. Commodi praesentium ducimus
+            quam obcaecati perspiciatis dolorum repudiandae laudantium ipsum
+            totam veniam possimus, aliquid nostrum est sit eius ab voluptatem
+            veritatis fugiat consequuntur iure.
+          </div>
+        </div>
+        <div>
+          <img src="../asset/images/rect_icon03.png" alt="" />
+          <div>
+            Nulla aperiam aliquam repellat laudantium rem! Magni eius ut nobis
+            cupiditate vel, sunt provident dolor, quasi iusto aperiam eum omnis?
+            Earum nihil officiis pariatur exercitationem labore in doloremque
+            praesentium non.
+          </div>
+        </div>
+        <div>
+          <img src="../asset/images/rect_icon04.png" alt="" />
+          <div>
+            Officia consectetur numquam aliquid doloremque, saepe iure esse
+            exercitationem ab! Deleniti eos mollitia suscipit architecto in
+            consequuntur impedit explicabo dolorum? Facilis saepe voluptates non
+            rerum similique libero dolore quisquam sequi.
+          </div>
+        </div>
+        <div>
+          <img src="../asset/images/rect_icon05.png" alt="" />
+          <div>
+            Id voluptate sint iure tempora vero enim odit consequatur, quis
+            distinctio! Impedit omnis praesentium rem sint nemo neque labore,
+            ratione ab distinctio excepturi pariatur numquam cum quae minus
+            laborum id?
+          </div>
+        </div>
+        <div>
+          <img src="../asset/images/rect_icon06.png" alt="" />
+          <div>
+            Inventore quibusdam unde quaerat similique rem eius perspiciatis
+            repellendus et hic vel vitae quidem eligendi numquam, error ipsam
+            corrupti repellat praesentium ex earum neque voluptatibus assumenda
+            officiis maiores tempora! Libero.
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
