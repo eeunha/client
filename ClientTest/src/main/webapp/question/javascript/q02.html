@@ -14,7 +14,8 @@
       .hidden {
         border: 0;
         outline: none;
-        readonly;
+        /* readonly: true; */
+        color: red;
       }
 
       h1 {
@@ -28,21 +29,26 @@
       <h1>회원 가입</h1>
       아이디 :
       <br />
-      <input type="textbox" name="id" />
-      <input class="hidden" type="textbox" />
+      <input type="text" name="id" />
+      <input class="hidden" type="text" name="hidden" readonly />
     </div>
     <script>
-      // console.log(document.all["id"].value);
       document.all["id"].onkeyup = m1;
 
       function m1() {
-        // console.log(event.target.value);
-        if (event.target.value.length < 4) {
-          // 아이디가 너무 짧습니다.
+        if (event.target.value.length == 0) {
+          document.all["hidden"].readOnly = true;
+          document.all["hidden"].value = "";
+        } else if (event.target.value.length < 4) {
+          document.all["hidden"].readOnly = false;
+          document.all["hidden"].value = "아이디가 너무 짧습니다.";
         } else if (event.target.value.length <= 12) {
-          // 아이디가 적합합니다.
+          document.all["hidden"].readOnly = false;
+          document.all["hidden"].value = "아이디가 적합합니다.";
+          console.log(event.target.value.length);
         } else {
-          // 아이디가 너무 깁니다.
+          document.all["hidden"].readOnly = false;
+          document.all["hidden"].value = "아이디가 너무 깁니다.";
         }
       }
     </script>

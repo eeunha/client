@@ -1,0 +1,50 @@
+<!-- 23.10.06 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #box {
+        padding: 40px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- q04.html -->
+    <div id="box">
+      <img src="../asset/images/cat01.jpg" name="1" />
+      <img src="../asset/images/cat02.jpg" name="2" />
+      <img src="../asset/images/cat03.jpg" name="3" />
+      <img src="../asset/images/cat04.jpg" name="4" />
+      <img src="../asset/images/cat05.jpg" name="5" />
+    </div>
+
+    <script>
+      var imgs = document.images;
+      // alert(imgs.length);
+
+      // document.image["cat1"].onmouseover = m1;
+
+      for (var i = 0; i < imgs.length; i++) {
+        // alert(i);
+        // alert(imgs[i].name);
+        imgs[i].onmouseover = m1;
+        imgs[i].onmouseout = m2;
+      }
+
+      function m1() {
+        // alert(event.target);
+        var imgName = event.target.name;
+        // alert(imgSrc);
+        event.target.src = "../asset/images/dog0" + imgName + ".jpg";
+      }
+
+      function m2() {
+        var imgName = event.target.name;
+        event.target.src = "../asset/images/cat0" + imgName + ".jpg";
+      }
+    </script>
+  </body>
+</html>

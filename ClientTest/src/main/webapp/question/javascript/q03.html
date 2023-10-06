@@ -1,0 +1,67 @@
+<!-- 23.10.06 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      h1 {
+        color: #777;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- q03.html -->
+    <h1>고양이</h1>
+    <img src="../asset/images/catty01.png" />
+    <img src="../asset/images/catty02.png" />
+    <img src="../asset/images/catty03.png" />
+    <img src="../asset/images/catty04.png" />
+    <img src="../asset/images/catty05.png" />
+
+    <script>
+      var cats = document.images;
+      // alert(cats[0].src);
+
+      for (var i = 0; i < cats.length; i++) {
+        cats[i].onmouseover = m1;
+        cats[i].onclick = m2;
+      }
+
+      // 마우스 올리면 해당 그림의 고양이 크기 키우기
+      function m1() {
+        // alert(event.target.name);
+        event.target.width += 10;
+      }
+
+      // 해당 고양이 클릭하면 크기 원래대로
+      function m2() {
+        event.target.width = 128;
+      }
+
+      window.onkeydown = m3;
+
+      // 키보드 숫자 누르면 해당 고양이 크기 키우기
+
+      function m3() {
+        // esc 키 누르면 크기 원래대로
+        if (event.keyCode == 27) {
+          for (var i = 0; i < cats.length; i++) {
+            cats[i].width = 128;
+          }
+        } else if (event.keyCode - 48 == 1) {
+          cats[0].width += 10;
+        } else if (event.keyCode - 48 == 2) {
+          cats[1].width += 10;
+        } else if (event.keyCode - 48 == 3) {
+          cats[2].width += 10;
+        } else if (event.keyCode - 48 == 4) {
+          cats[3].width += 10;
+        } else if (event.keyCode - 48 == 5) {
+          cats[4].width += 10;
+        }
+      }
+    </script>
+  </body>
+</html>
