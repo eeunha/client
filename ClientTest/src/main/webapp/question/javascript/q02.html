@@ -1,0 +1,44 @@
+<!-- 23.10.06 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #box {
+        width: 200px;
+        margin: 0 auto;
+      }
+
+      h1 {
+        color: #777;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- q02.html -->
+    <div id="box">
+      <h1>회원 가입</h1>
+      아이디 :
+      <br />
+      <input type="textbox" name="id" />
+      <p id="hidden-text"></p>
+    </div>
+    <script>
+      // console.log(document.all["id"].value);
+      document.all["id"].onkeyup = m1;
+
+      function m1() {
+        // console.log(event.target.value);
+        if (event.target.value.length < 4) {
+          // 아이디가 너무 짧습니다.
+        } else if (event.target.value.length <= 12) {
+          // 아이디가 적합합니다.
+        } else {
+          // 아이디가 너무 깁니다.
+        }
+      }
+    </script>
+  </body>
+</html>

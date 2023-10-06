@@ -1,0 +1,40 @@
+<!-- 23.10.06 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      h1 {
+        color: #777;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- q01.html -->
+    <h1>데이터 입력</h1>
+    <form name="form1">
+      이름 : <input type="textbox" name="tb" /><br />
+      나이 : <input type="textbox" name="tb" /><br />
+      별명 : <input type="textbox" name="tb" /><br />
+
+      <input type="button" value="Long" onclick="m1();" />
+      <input type="button" value="Short" onclick="m2();" />
+    </form>
+
+    <script>
+      function m1() {
+        for (var i = 0; i < document.forms[0].elements.length; i++) {
+          document.form1.elements[i].size = 50;
+        }
+      }
+
+      function m2() {
+        for (var i = 0; i < document.forms[0].elements.length; i++) {
+          document.forms[0].elements[i].size = 20;
+        }
+      }
+    </script>
+  </body>
+</html>
