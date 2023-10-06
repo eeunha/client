@@ -11,6 +11,12 @@
         margin: 0 auto;
       }
 
+      .hidden {
+        border: 0;
+        outline: none;
+        readonly;
+      }
+
       h1 {
         color: #777;
       }
@@ -23,7 +29,7 @@
       아이디 :
       <br />
       <input type="textbox" name="id" />
-      <p id="hidden-text"></p>
+      <input class="hidden" type="textbox" />
     </div>
     <script>
       // console.log(document.all["id"].value);
