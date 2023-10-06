@@ -1,0 +1,66 @@
+<!-- 23.10.06 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      input[type="button"] {
+        margin: 5px;
+        color: #555;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <form name="form1">
+      <input type="button" name="btn1" value="서울시 강남구 역삼동" />
+      <br />
+      <input type="button" name="btn2" value="서울시 강남구 대치동" />
+      <br />
+      <input type="button" name="btn3" value="서울시 강남구 도곡동" />
+    </form>
+    <script>
+      document.form1.btn1.onclick = m1;
+      document.form1.btn2.onclick = m2;
+      document.form1.btn3.onclick = m3;
+
+      function m1() {
+        // alert("역삼");
+        //우편번호 06232
+        //주소 서울시 강남구 역삼동
+        //상세주소에 focus
+
+        window.close();
+        opener.document.form1.post.value = "06232";
+        opener.document.form1.addr.value = "서울시 강남구 역삼동";
+        opener.document.form1.detailAddr.focus();
+      }
+
+      function m2() {
+        // alert("대치");
+        //우편번호 06291
+        //주소 서울시 강남구 대치동
+        //상세주소에 focus
+
+        window.close();
+        opener.document.form1.post.value = "06291";
+        opener.document.form1.addr.value = "서울시 강남구 대치동";
+        opener.document.form1.detailAddr.focus();
+      }
+
+      function m3() {
+        // alert("도곡");
+        //우편번호 06267
+        //주소 서울시 강남구 도곡동
+        //상세주소에 focus
+
+        window.close();
+        opener.document.form1.post.value = "06267";
+        opener.document.form1.addr.value = "서울시 강남구 도곡동";
+        opener.document.form1.detailAddr.focus();
+      }
+    </script>
+  </body>
+</html>

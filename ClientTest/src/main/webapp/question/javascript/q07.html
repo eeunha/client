@@ -1,0 +1,107 @@
+<!-- 23.10.06 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      h1 {
+        color: #6b6b6b;
+      }
+      #main {
+        width: 650px;
+        margin: 0 auto;
+      }
+      #img-space {
+        width: 600px;
+        margin: 30px;
+      }
+      #button-space {
+        width: 600px;
+        margin: 0 auto;
+        margin-bottom: 30px;
+      }
+
+      img {
+        border: 10px solid #aaaaaa;
+        margin: 10px;
+      }
+
+      input[type="button"] {
+        border: 10px solid #aaa;
+        width: 250px;
+        margin: 5px;
+        padding: 5px;
+        font-size: 2em;
+        color: #6b6b6b;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- q07.html -->
+    <h1>Pattern Lock</h1>
+    <div id="main">
+      <div id="img-space">
+        <img src="../asset/images/rect_icon01.png" name="1" />
+        <img src="../asset/images/rect_icon02.png" name="2" />
+        <img src="../asset/images/rect_icon03.png" name="3" />
+        <img src="../asset/images/rect_icon04.png" name="4" />
+        <img src="../asset/images/rect_icon05.png" name="5" />
+        <img src="../asset/images/rect_icon06.png" name="6" />
+        <img src="../asset/images/rect_icon07.png" name="7" />
+        <img src="../asset/images/rect_icon08.png" name="8" />
+        <img src="../asset/images/rect_icon09.png" name="9" />
+      </div>
+      <div id="button-space">
+        <input type="button" name="reset" value="RESET" />
+        <input type="button" name="input" value="INPUT" />
+      </div>
+    </div>
+
+    <script>
+      var imgs = document.images;
+      var pw = "";
+
+      // 이미지 mouseover 이벤트 걸기
+      for (var i = 0; i < imgs.length; i++) {
+        imgs[i].onmouseover = changeImg;
+      }
+
+      // 이미지 변경
+      function changeImg() {
+        event.target.src = "../asset/images/rect_icon10.png";
+        pw += event.target.name;
+      }
+
+      // reset -> 원래 이미지로 돌리기
+      document.all["reset"].onclick = resetImage;
+
+      function resetImage() {
+        pw = "";
+        resetAllImgs();
+      }
+
+      // input -> 순서까지 맞는지 확인해야함
+      document.all["input"].onclick = checkValid;
+
+      function checkValid() {
+        if (pw == "14789") {
+          // 정답인 경우 - 현재 창에 구글 띄우기
+          window.open("https://google.com", "_self");
+        } else {
+          // 틀린 경우
+          pw = "";
+          alert("Error!!");
+          resetAllImgs();
+        }
+      }
+
+      function resetAllImgs() {
+        for (var i = 0; i < 9; i++) {
+          imgs[i].src = "../asset/images/rect_icon0" + (i + 1) + "" + ".png";
+        }
+      }
+    </script>
+  </body>
+</html>

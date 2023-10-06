@@ -1,0 +1,61 @@
+<!-- 23.10.06 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #box {
+        border: 1px solid #ccc;
+        padding: 5px;
+        width: 540px;
+      }
+      #title {
+        color: #333;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- q06.html -->
+    <div id="box">
+      <img src="../asset/images/img01.jpg" name="1" />
+      <img src="../asset/images/img02.jpg" name="2" />
+      <img src="../asset/images/img03.jpg" name="3" />
+    </div>
+    <h1 id="title" name="title"></h1>
+    <script>
+      var imgs = document.images;
+
+      for (var i = 0; i < imgs.length; i++) {
+        imgs[i].onmouseover = m1;
+        imgs[i].onmouseout = m2;
+      }
+
+      function m1() {
+        var t = event.target;
+
+        t.src = "../asset/images/img0" + (parseInt(t.name) + 3) + "" + ".jpg";
+
+        if (t.name == 1) {
+          document.all["title"].innerText =
+            "'스키'타는 사람이 '당근'으로 변했습니다.";
+        } else if (t.name == 2) {
+          document.all["title"].innerText =
+            "'해바라기'가 '피망'으로 변했습니다.";
+        } else if (t.name == 3) {
+          document.all["title"].innerText = "'나무'가 '개'가 됐습니다.";
+        }
+      }
+
+      function m2() {
+        var lastSlashIdx = event.target.src.lastIndexOf("/");
+        var idx = event.target.src.substr(48, 1);
+
+        event.target.src = "../asset/images/img0" + (idx - 3) + ".jpg";
+
+        document.all["title"].innerText = "";
+      }
+    </script>
+  </body>
+</html>
