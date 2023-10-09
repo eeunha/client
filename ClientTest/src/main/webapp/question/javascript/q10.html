@@ -1,0 +1,69 @@
+<!-- 23.10.09 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table {
+        border-collapse: collapse;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>회원 가입</h1>
+    <table border>
+      <tr>
+        <th>주민번호</th>
+        <td>
+          <input type="text" size="7" name="firstSsn" /> -
+          <input type="text" size="7" name="lastSsn" />
+        </td>
+      </tr>
+      <tr>
+        <th>생년월일</th>
+        <td>
+          <input type="text" size="4" /> 년 <input type="text" size="2" /> 월
+          <input type="text" size="2" /> 일
+        </td>
+      </tr>
+      <tr>
+        <th>성별</th>
+        <td>
+          <input type="radio" name="rbMale" />남자
+          <input type="radio" name="rbFemale" />여자
+        </td>
+      </tr>
+    </table>
+
+    <script>
+      document.all.firstSsn.onkeyup = m1;
+      document.all.lastSsn.onkeyup = m2;
+
+      function m1() {
+        if (event.target.value.length == 6) {
+          // 포커스 이동
+          document.all.lastSsn.focus();
+
+          // 생년월일 자동 완성
+        }
+      }
+
+      function m2() {
+        var target = event.target.value;
+        if (target.length == 1) {
+          // 성별 자동 체크
+          console.log(target);
+          if (target == "1" || target == "3") {
+            document.all.rbMale.checked = true;
+            document.all.rbFemale.checked = false;
+          } else if (target == "2" || target == "4") {
+            document.all.rbMale.checked = false;
+            document.all.rbFemale.checked = true;
+          }
+        }
+      }
+    </script>
+  </body>
+</html>

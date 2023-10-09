@@ -1,0 +1,76 @@
+<!-- 23.10.09 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      form {
+        border: 1px solid black;
+        width: 400px;
+        padding: 20px 15px 15px 15px;
+        margin-top: 30px;
+      }
+
+      input[type="text"] {
+        height: 18px;
+      }
+
+      #title {
+        position: relative;
+        left: 10px;
+        top: -30px;
+        background-color: white;
+        width: 120px;
+        height: 10px;
+        padding-left: 15px;
+      }
+
+      #lh {
+        line-height: 0.8;
+      }
+
+      #cb {
+        margin-left: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>주문하기</h1>
+    <form name="form1">
+      <div id="title">주문하시는 분</div>
+      <div id="lh">
+        이름 : <input type="text" name="userName" /><br />
+        <br id="mid" />
+        주소 : <input type="text" name="addr" /><br />
+      </div>
+    </form>
+    <p>
+      <label
+        ><input type="checkbox" id="cb" name="cb" /> 주문하시는 분과 정보가
+        동일합니다.</label
+      >
+    </p>
+    <form name="form2">
+      <div id="title">받으시는 분</div>
+      <div id="lh">
+        이름 : <input type="text" name="userName" /><br />
+        <br id="mid" />
+        주소 : <input type="text" name="addr" /><br />
+      </div>
+    </form>
+    <script>
+      document.all["cb"].onclick = m1;
+
+      function m1() {
+        var checkbox = document.all.cb;
+
+        if (checkbox.checked) {
+          document.form2.userName.value = document.form1.userName.value;
+          document.form2.addr.value = document.form1.addr.value;
+        }
+      }
+    </script>
+  </body>
+</html>
