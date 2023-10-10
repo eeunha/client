@@ -1,0 +1,73 @@
+<!-- 23.10.10 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      fieldset {
+        width: 200px;
+      }
+
+      table {
+        border: 1px solid black;
+        border-collapse: collapse;
+        width: 400px;
+        margin-top: 20px;
+      }
+
+      table td {
+        border: 1px solid black;
+        height: 30px;
+        text-align: center;
+      }
+
+      #btn1 {
+        margin-top: 5px;
+      }
+
+      #yellow {
+        background-color: #ffff00;
+      }
+
+      #green {
+        background-color: #acef12;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>테이블</h1>
+    <fieldset>
+      <legend>색상 입력</legend>
+      색상 : <input type="color" id="picker" />
+      <br />
+      이름 : <input type="text" size="10" id="name" />
+      <br />
+      <input type="button" value="추가하기" id="btn1" />
+    </fieldset>
+    <div id="div1">
+      <table>
+        <tr>
+          <th>색상명</th>
+          <th>미리보기</th>
+        </tr>
+        <tr>
+          <td>노랑</td>
+          <td id="yellow">#FFFF00</td>
+        </tr>
+        <tr>
+          <td>풀색</td>
+          <td id="green">#ACEF12</td>
+        </tr>
+      </table>
+    </div>
+    <script>
+      document.querySelector("#btn1").onclick = m1;
+
+      function m1() {
+        alert("클릭");
+      }
+    </script>
+  </body>
+</html>
