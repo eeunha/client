@@ -1,0 +1,60 @@
+<!-- 23.10.10 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #box {
+        width: 600px;
+        height: 600px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      #num {
+        font-size: 200px;
+        width: 270px;
+        height: 270px;
+        font-weight: bold;
+        background-color: #fff;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="box">
+      <div id="num"></div>
+    </div>
+
+    <script>
+      var n = 10;
+      var interval = 0;
+
+      function start() {
+        interval = setInterval(m1, 1000);
+        window.document.onkeyup = m2;
+      }
+
+      function m1() {
+        document.getElementById("num").innerHTML = n;
+        n--;
+        if (n < 0) {
+          clearInterval(interval);
+          window.open("https://google.com", "_self");
+        }
+      }
+
+      function m2() {
+        // alert(event.keyCode);
+        if (event.keyCode == 27) {
+          clearInterval(interval);
+          window.document.body.bgColor = "tomato";
+        }
+      }
+
+      start();
+    </script>
+  </body>
+</html>

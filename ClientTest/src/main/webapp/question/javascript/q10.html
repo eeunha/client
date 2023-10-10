@@ -17,15 +17,16 @@
       <tr>
         <th>주민번호</th>
         <td>
-          <input type="text" size="7" name="firstSsn" /> -
+          <input type="text" size="6" name="firstSsn" /> -
           <input type="text" size="7" name="lastSsn" />
         </td>
       </tr>
       <tr>
         <th>생년월일</th>
         <td>
-          <input type="text" size="4" /> 년 <input type="text" size="2" /> 월
-          <input type="text" size="2" /> 일
+          <input type="text" size="4" name="year" /> 년
+          <input type="text" size="2" name="month" /> 월
+          <input type="text" size="2" name="date" /> 일
         </td>
       </tr>
       <tr>
@@ -47,6 +48,15 @@
           document.all.lastSsn.focus();
 
           // 생년월일 자동 완성
+          // 2개씩 자르기
+          var year = event.target.value.substr(0, 2);
+          var month = event.target.value.substr(2, 2);
+          var date = event.target.value.substr(4, 2);
+          // alert(day);
+
+          document.all["year"].value = 19 + year;
+          document.all["month"].value = month;
+          document.all["date"].value = date;
         }
       }
 
@@ -55,10 +65,10 @@
         if (target.length == 1) {
           // 성별 자동 체크
           console.log(target);
-          if (target == "1" || target == "3") {
+          if (target == "1") {
             document.all.rbMale.checked = true;
             document.all.rbFemale.checked = false;
-          } else if (target == "2" || target == "4") {
+          } else if (target == "2") {
             document.all.rbMale.checked = false;
             document.all.rbFemale.checked = true;
           }
