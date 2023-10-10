@@ -1,0 +1,37 @@
+<!-- 23.10.10 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #box {
+        border: 1px solid #777;
+        width: 580px;
+        min-height: 185px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="box"></div>
+
+    <script>
+      var box = document.getElementById("box");
+      window.addEventListener("keydown", m1, false);
+
+      function m1(e) {
+        // alert(e.keyCode);
+        // 48~571
+
+        if (e.keyCode >= 48 && e.keyCode <= 57) {
+          var n = e.keyCode - 48;
+          // 해당 번호에 맞는 이미지 넣기
+          var img = document.createElement("img");
+          img.setAttribute("src", "../asset/images/" + n + ".png");
+          box.appendChild(img);
+        }
+      }
+    </script>
+  </body>
+</html>
