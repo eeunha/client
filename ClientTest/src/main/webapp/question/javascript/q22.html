@@ -1,0 +1,83 @@
+<!-- 23.10.11 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #tbl1 {
+        border: 1px solid black;
+        border-collapse: collapse;
+        width: 600px;
+        height: 600px;
+        margin: 20px;
+      }
+
+      #tbl1 td {
+        border: 1px solid black;
+        text-align: center;
+        font-weight: bold;
+        font-size: 5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <table id="tbl1">
+      <tr>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+        <td>0</td>
+      </tr>
+    </table>
+
+    <script>
+      const list = document.querySelectorAll("#tbl1 td");
+      for (let i = 0; i < list.length; i++) {
+        list[i].onmousedown = () => {
+          if (event.buttons == 1) {
+            // alert("1");
+            // console.log(event.target);
+            // console.log(event.target.innerText);
+            event.target.innerText++;
+          } else if (event.buttons == 2) {
+            // alert("2");
+            if (event.target.innerText != 0) event.target.innerText--;
+          }
+        };
+      }
+
+      window.oncontextmenu = () => false;
+    </script>
+  </body>
+</html>
