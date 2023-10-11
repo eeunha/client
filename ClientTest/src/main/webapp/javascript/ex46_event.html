@@ -27,13 +27,126 @@
       </div>
     </div>
 
+    <hr />
+
+    <input type="text" id="txt1" />
+
+    <hr />
+
+    <img src="../asset/images/catty01.png" alt="" id="cat1" />
+
     <script>
       //이벤트 버블링(Event Bubbling)
       //  vs 이벤트 터널링(Event Tunneling) == 이벤트 캡쳐링(Event Capturing)
 
+      // 최상위 태그부터 하위 태그까지 내려가는 것 = 이벤트 터널링
+      // 하위태그부터 최상위 태그까지 올라가는 것 = 이벤트 버블링
+
+      // 이벤트 터널링
+      // - 지원 안함
+
+      // 이벤트 버블링
+      // - 지원함
+      // - 기본값
+
       const p1 = document.getElementById("p1");
       const p2 = document.getElementById("p2");
       const p3 = document.getElementById("p3");
+
+      // document.getElementsByTagName("html")[0].onclick = function () {
+      //   alert("html");
+      // };
+
+      // document.getElementsByTagName("body")[0].onclick = function () {
+      //   alert("body");
+      // };
+
+      // p1.onclick = () => {
+      //   alert("빨강");
+      // };
+
+      // p2.onclick = () => {
+      //   alert("노랑");
+      //   event.cancelBubble = true;
+      // };
+
+      // p3.onclick = () => {
+      //   alert("파랑");
+
+      //   // 이벤트 버블링을 여기서 중단해라! > 더 이상의 이벤트가 없다.
+      //   event.cancelBubble = true;
+      // };
+
+      // 대상이 없어서 이벤트 적용 불가
+      // document.getElementById("cat1").onkeydown = () => {
+      //   if (event.keyCode == 37) {
+      //     alert();
+      //   } else if (event.keyCode == 39) {
+      //   }
+      // };
+
+      //window의 키 이벤트 > 모든 상황에 늘 발생
+      // window.onkeydown = () => {
+      //   if (event.keyCode == 37) {
+      //     document.getElementById("cat1").width -= 10;
+      //   } else if (event.keyCode == 39) {
+      //     document.getElementById("cat1").width += 10;
+      //   } else if (event.keyCode == 65) {
+      //     location.href = "https://google.com";
+      //   }
+      // };
+
+      // 아무에게도 포커스가 없다면 window가 가지고 있다고 생각하자.
+
+      // document.getElementById("txt1").onkeydown = () => {
+      //   // event.cancelBubble = true;
+      // };
+
+      // 터널링 예제
+
+      //기본 동작
+      //- 이벤트 버블링
+
+      //1. BOM 이벤트
+      //  - 이벤트 버블링
+
+      //2. DOM 이벤트
+      //  - 이벤트 버블링
+      //  - 이벤트 터널링
+
+      // true -> 이벤트 터널링 방식
+      // p1.addEventListener(
+      //   "click",
+      //   () => {
+      //     alert("빨강");
+      //   },
+      //   true
+      // );
+      // p2.addEventListener(
+      //   "click",
+      //   () => {
+      //     alert("노랑");
+      //   },
+      //   true
+      // );
+      // p3.addEventListener("click", () => {
+      //   alert("파랑");
+      // });
+
+      // 버블링 도 추가로 걸었다. ex) 빨 노 파 파 노 빨
+      p1.addEventListener("click", () => alert("빨강"));
+      p2.addEventListener("click", () => alert("노랑"));
+      p3.addEventListener("click", () => {
+        alert("파랑");
+
+        // 아래의 두 개가 같음. 위에가 먼저 나옴.
+        event.cancelBubble = true;
+        event.stopPropagation(); // 이벤트 전파 중지
+      });
+
+      // 부모자식이 겹쳐있을 때 어떤 이벤트를 먼저할지 생각하고
+      // 부모 먼저 -> 터널링
+      // 자식 먼저 -> 버블링
     </script>
   </body>
 </html>
