@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #menu {
+        display: flex; /* 빈틈없이 메우기 */
+        width: 630px; /* 객체 너비만큼 주기 */
+        position: fixed;
+        top: 0;
+        /* 아래 3개 다 해야 중앙정렬 된다. */
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+
+        transform: translate(0px, -100px);
+      }
+
+      #menu img {
+        transition: all 0.5s;
+      }
+
+      /* js로 해보자 */
+      /* #menu img:hover {
+        transform: translate(0px, 90px);
+      } */
+    </style>
+  </head>
+  <body>
+    <!-- ex60_css.html -->
+    <nav id="menu">
+      <img src="../asset/images/rect_icon01.png" />
+      <img src="../asset/images/rect_icon02.png" />
+      <img src="../asset/images/rect_icon03.png" />
+      <img src="../asset/images/rect_icon04.png" />
+      <img src="../asset/images/rect_icon05.png" />
+    </nav>
+
+    <script></script>
+  </body>
+</html>

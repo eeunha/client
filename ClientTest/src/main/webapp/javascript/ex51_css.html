@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #box1 {
+        border: 1px solid black;
+        width: 200px;
+        height: 200px;
+      }
+      .one {
+        font-size: 3rem;
+      }
+      .two {
+        color: cornflowerblue;
+      }
+      .three {
+        text-decoration: underline;
+      }
+
+      body {
+        margin-bottom: 300px;
+      }
+    </style>
+    <script
+      src="https://kit.fontawesome.com/3f49e378e2.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- ex51_css.html -->
+    <h1>CSS</h1>
+
+    <input type="button" value="버튼" id="btn1" />
+
+    <hr />
+
+    <div id="box1">상자</div>
+
+    <hr />
+
+    <h1>텍스트</h1>
+
+    <div class="tool">
+      <button type="button" id="btn2">
+        <i class="fa-solid fa-minus"></i>
+      </button>
+      <button type="button" id="btn3">
+        <i class="fa-solid fa-plus"></i>
+      </button>
+    </div>
+
+    <p id="content">
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam iusto
+      pariatur magnam voluptatem nesciunt natus placeat modi culpa est. Animi
+      corrupti magnam voluptates nisi tenetur. Similique minus facere
+      repellendus, aliquam omnis sapiente quasi! Cum deleniti voluptatibus
+      adipisci eos illo sit, at eligendi, illum odit aut dolores repudiandae.
+      Repudiandae rem nemo velit. Quisquam, commodi veniam similique praesentium
+      omnis odit rem adipisci. Repellendus dolorum perferendis velit soluta
+      dolorem, libero dolor ducimus reprehenderit voluptates deleniti
+      repudiandae tempora accusantium sit vel magnam quo excepturi minus
+      molestias asperiores repellat aspernatur quos similique necessitatibus.
+      Voluptate corporis officia quam labore soluta sit minima rem voluptas
+      accusamus? Optio ullam obcaecati iste illum odit fuga nulla sed enim
+      soluta, hic aut rerum ipsa, tenetur expedita fugit. Dicta nulla animi
+      quasi assumenda delectus eius et error eaque ullam corporis magnam
+      expedita quia neque minima ex itaque iure blanditiis autem suscipit
+      voluptatum distinctio in unde, repellat veniam! Aut quia, sed laborum,
+      natus sint, esse adipisci optio suscipit consequatur provident soluta.
+      Reprehenderit, illum. Quis deserunt quae doloribus incidunt provident odit
+      nemo consectetur hic doloremque molestiae numquam vero rem fugiat, enim
+      facilis reprehenderit earum officiis corporis. Iste perspiciatis repellat
+      asperiores sunt nesciunt similique voluptate placeat numquam, reiciendis
+      sapiente suscipit qui, quae totam delectus labore voluptatum odit cumque?
+      Cum molestiae ipsam sed deserunt rem animi quia quae quisquam repellat,
+      eaque aut minima deleniti. Assumenda harum quaerat, sequi quasi in aliquam
+      quo labore officia repellat possimus placeat magni eius, deserunt
+      laboriosam tempore itaque tempora dolor doloremque aliquid autem
+      accusantium cum nihil perferendis impedit. Consectetur voluptates
+      veritatis earum omnis exercitationem modi labore sapiente id optio sequi
+      quidem a cumque, recusandae necessitatibus non tempora nobis molestiae.
+      Possimus qui rerum tempora doloribus animi asperiores quos inventore, nisi
+      facilis alias tempore sunt quod laborum exercitationem provident
+      voluptatum numquam mollitia, corporis fugit nam non, earum cum nihil?
+      Fugit, rem expedita?
+    </p>
+
+    <script>
+      const btn1 = document.getElementById("btn1");
+      const box1 = document.getElementById("box1");
+
+      btn1.addEventListener("click", () => {
+        /*
+          JavaScript > CSS 조작
+          1. 모든 태그 > style 속성 제공(인라인 스타일 시트)
+              > 자바스크립트 style 프로퍼티 제공 (직접적인 조작. 빈도 높음.)
+
+          2. class 조작(간접적인 조작. 빈도 낮으나 관리에 용이)
+            - className 프로퍼티
+            - classList 프로퍼티
+
+        */
+
+        // 1번 방법
+        // btn1.value = "Button";
+        // box1.style = "color: blue;"; //BOM
+        // box1.setAttribute("style", "color:red"); //DOM
+
+        // 조직적인 관리 어려움
+        // box1.innerHTML = "<input>";
+        // box1.style = "color:blue; font-size:2rem"; //인라인 스타일 시트 값
+
+        //style 프로퍼티 > 접근 가능 속성 > 프로퍼티(배열) 제공
+        // box1.style = "color:blue;";
+        // box1.style.color = "blue"; // (윗줄과 같음)
+        // box1.style.fontSize = "2rem"; // - -> 대문자로 변경(카멜표기법)
+        // box1.style.backgroundColor = "orange";
+
+        // box1.style["color"] = "gold"; // 맵 형태로도 가능. (멤버접근연산자 형태로도 가능)
+        // box1.style["font-size"] = "3rem"; // 이렇게 사용하면 카멜표기법으로 변경하지 않아도 된다.
+        // box1.style["background-image"] = "url(../asset/images/catty01.png)";
+
+        //조심할 것
+        //js로 건들인 css는 인라인 스타일 시트로 들어간다.
+
+        // 상자의 현재 너비?
+        // alert(box1.style.width); //null  -> div태그의 style속성이 없기 때문에 안나온다. -> 인라인 스타일 태그만 읽을 수 있다.
+        // box1.style.width = "300px";
+
+        //버튼 클릭 > 상자의 너비 > 현재 너비 + 50px
+        //parseInt(box1.style.width) = '200px' -> 200
+        // box1.style.width = parseInt(box1.style.width) + 50 + "px"; // style 속성 설정해줘야 읽어올 수 있다.
+
+        //CSS 적용 방식 무관 > 현재 객체에 적용된 모든 CSS 속성을 반환
+        const list = window.getComputedStyle(box1); // 인라인 스타일 시트가 아닌데도 값을 읽어올 수 있다.
+
+        alert(box1.style.width); // null -> 인라인이 아니면 못읽어온다.
+
+        // 아래 두 줄은 위의 대체제이다.
+        alert(list.width); // 200px
+        alert(list.getPropertyValue("width")); // 200px
+      }); //btn1.onclick
+
+      const btn2 = document.getElementById("btn2");
+      const btn3 = document.getElementById("btn3");
+      const content = document.getElementById("content");
+
+      let size = 16;
+
+      btn2.addEventListener("click", () => {
+        // size--;
+        // content.style.fontSize = size + "px";
+
+        // 2번 방법
+        // <p class="one">
+        // <p class="one two"> -> 클래스 하나일 때만 사용하는 방법
+        // content.className = "one two";
+
+        // 클래스 여러개 적용시 사용
+        content.classList.add("one");
+        content.classList.add("two");
+      });
+
+      btn3.addEventListener("click", () => {
+        // size++;
+        // content.style.fontSize = size + "px";
+
+        //2번 방법
+        // <p class="one two">
+        // <p class="one two three">
+        // content.className += " three";
+
+        content.classList.add("three");
+        content.classList.remove("two");
+
+        console.log(content.className);
+      });
+    </script>
+  </body>
+</html>
