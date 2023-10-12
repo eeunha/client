@@ -38,6 +38,26 @@
       <img src="../asset/images/rect_icon05.png" />
     </nav>
 
-    <script></script>
+    <script>
+      const item = document.querySelectorAll("#menu > img");
+      let olditem = null;
+
+      for (let i = 0; i < item.length; i++) {
+        item[i].onclick = () => {
+          if (olditem != null) {
+            //메뉴 1개가 열려있다.
+            olditem.style.transform = "translate(0px, 0px)";
+          }
+
+          if (event.target != olditem) {
+            event.target.style.transform = "translate(0px, 90px)";
+            olditem = event.target;
+          } else {
+            event.target.style.transform = "translate(0px, 0px)";
+            olditem = null;
+          }
+        };
+      }
+    </script>
   </body>
 </html>
