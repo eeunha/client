@@ -7,6 +7,25 @@
     <title>Document</title>
   </head>
   <body>
-    <script></script>
+    <!-- <div id="imageDiv"></div> -->
+    <script>
+      // 사진이 매번 생겨야 한다.
+      // 계속 이미지 요소를 추가해야한다.
+
+      window.onmousedown = () => {
+        const img = document.createElement("img");
+        // img.setAttribute("src", "../asset/images/m01.png");
+        img.src = "../asset/images/m01.png";
+        img.style.left = event.clientX - 64 + "px";
+        img.style.top = event.clientY - 64 + "px";
+        img.style.position = "absolute";
+        document.body.appendChild(img);
+      };
+
+      window.oncontextmenu = () => false;
+
+      // 클릭했을 때 이미지가 나와야한다.
+      // 클릭했을 때의 좌표에 이미지가 나와야 한다.
+    </script>
   </body>
 </html>

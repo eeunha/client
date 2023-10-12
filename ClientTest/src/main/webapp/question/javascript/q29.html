@@ -1,0 +1,44 @@
+<!-- 23.10.12 -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let count = 0;
+      window.onmousedown = () => {
+        let n = makeNum();
+        // console.log(n);
+
+        if (count >= 10) {
+          // const list = document.body.child;
+          // console.log(list);
+          const oldImg = document.getElementById(count - 10 + "");
+          document.body.removeChild(oldImg);
+        }
+
+        const img = document.createElement("img");
+        img.src = `../asset/images/m${n}.png`;
+        img.style.left = event.clientX - 64 + "px";
+        img.style.top = event.clientY - 64 + "px";
+        img.style.position = "absolute";
+        img.id = count;
+        document.body.appendChild(img);
+
+        count++;
+      };
+
+      function makeNum() {
+        let n = Math.floor(Math.random() * 10) + 1;
+
+        if (n < 10) n = "0" + n;
+        else n += "";
+
+        return n;
+      }
+    </script>
+  </body>
+</html>
