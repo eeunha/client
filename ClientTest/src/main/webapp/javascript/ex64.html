@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- ex64.html -->
+    <script>
+      // 객체
+      const o1 = new Object();
+      const o2 = {}; // 리터럴 표기. 간편하다
+
+      o1.name = "홍길동";
+      o1.hello = () => {
+        console.log("hello");
+      };
+
+      o2.name = "아무개";
+      o2.hello = () => {
+        // 프로퍼티에 오타나 실수가 있다면 어떻게 파악하지?
+        console.log("안녕");
+      };
+
+      // 생성자 함수
+      // - 자바의 생성자와 유사
+      // - 함수명을 파스칼 표기법으로 작성한다.
+      /*
+        자바에서는
+        class User{
+          private String name;
+          private int age;
+
+          public User(String name, int age){
+            this.name = name;
+            this.age = age;
+          }
+        }
+      */
+
+      // js에서는
+      function User(name, age) {
+        this.name = name; // 여기의 this는 window다.
+        this.age = age;
+      }
+
+      //*** 생성자 함수는 절대로 일반 함수처럼 그냥 호출하면 안된다.
+      // User("홍길동", 20);
+
+      //***** 생성자 함수는 반드시 new 연산자와 같이 사용해야 한다.
+      // - new : 객체 생성 연산자 == new Object()
+      // 순서! new -> 빈 객체 생성 -> User 함수 실행 -> 매개변수를 new가 만든 객체에 넣는다.(초기화)
+      const o3 = new User("홍길동", 20);
+
+      console.log(o3.name);
+      console.log(o3.age);
+
+      const o4 = new User("하하하", 25);
+
+      console.log(o4.name);
+      console.log(o4.age);
+
+      // var로 선언한 전역 변수 > window의 프로퍼티
+      // var color = "gold";
+
+      // new > {}
+      const now = new Date();
+      const list = new Array();
+
+      list[0] = 10; // 0 > 프로퍼티
+      list[2] = 30; // 2 > 프로퍼티
+
+      console.log(list[1]); //undefined
+
+      const hong = {};
+      console.log(hong.name); //undefined
+
+      // console.log(height); // height is not defined
+
+      const arr = {
+        0: "사과",
+        1: "귤",
+        2: "바나나",
+        length: 3,
+      };
+
+      console.log(arr[0]);
+      console.log(arr[1]);
+      console.log(arr[3]);
+      console.log(arr.length);
+
+      const desk = {};
+      const today = new Date();
+      const list2 = new Array();
+
+      console.log(typeof desk); // object
+      console.log(typeof today); // object
+      console.log(typeof list2); // object
+
+      // object > 구체적으로 확인하려면 > 생성자 함수명 사용
+      console.log(today.constructor.name); // Date
+      console.log(list2.constructor.name); // Array
+
+      const list3 = new Array();
+
+      list3[0] = "강아지";
+      list3[1] = "고양이";
+      list3.address = "서울시 강남구";
+      list3.check = () => alert("하하하");
+
+      // const o5 = {
+      //   name: "홍길동",
+      //   age: 20,
+      //   info: () => {
+      //     console.log(name, age);
+      //   },
+      // };
+
+      // console.log(o5.info()); // age is not defined  지역변수로 인식
+
+      // this 사용하기
+      const o5 = {
+        name: "홍길동",
+        age: 20,
+        info: function () {
+          // info: () => { // -> 이거는 this가 안된다. function을 써야 한다.
+          console.log(this.name, this.age);
+        },
+      };
+
+      o5.info();
+
+      const o6 = {
+        name: "호호호",
+        age: 27,
+        info: m1,
+      };
+
+      function m1() {
+        console.log(this.name, this.age);
+      }
+
+      o6.info(); //o6.name, o6.age
+
+      m1(); // 함수의 원형: window.m1(); > window.name, window.age
+
+      window.m1();
+    </script>
+  </body>
+</html>
