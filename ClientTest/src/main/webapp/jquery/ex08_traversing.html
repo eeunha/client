@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        border: 1px solid black;
+        padding: 15px;
+        margin: 15px;
+      }
+      #me {
+        border: 10px solid cornflowerblue;
+      }
+      .check {
+        outline: 10px solid coral;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ex08_traversing.html(axis) -->
+    <h1>Axis</h1>
+
+    <input type="button" value="버튼" id="btn1" />
+    <hr />
+    <div id="div1">
+      할아버지
+      <div>
+        큰아버지
+        <div>사촌</div>
+      </div>
+      <div>
+        아버지
+        <div>큰형</div>
+        <div>작은형</div>
+        <div id="me">
+          나
+          <!--dom-->
+          <div>자식</div>
+          <div>
+            자식
+            <div>손자</div>
+            <div class="test">손자</div>
+            <div class="test">손자</div>
+          </div>
+          <div>자식</div>
+        </div>
+        <div>동생</div>
+        <div>막내동생</div>
+      </div>
+      <div>
+        작은아버지
+        <div>사촌</div>
+      </div>
+    </div>
+
+    <script src="../asset/js/jquery-1.12.4.js"></script>
+    <script>
+      $("#btn1").click(function () {
+        //자식
+        //-childNodes, chlidren (전부, 태그만)
+        // $("#me").children().addClass("check");
+        // $("#me").children().first().addClass("check");
+        // $("#me").children().last().addClass("check");
+
+        //0, 1, 2, 3 > 위에서부터
+        //-1, -2, -3 > 아래에서부터
+        // $("#me").children().eq(1).addClass("check"); // 둘째 자식 찾기
+        // $("#me").children().eq(-1).addClass("check"); // 막내
+
+        // $("#me").children().children().addClass("check");
+        // $("#me > div > div").addClass("check");
+
+        // $("#me > div>div.test").addCalss("check");
+        // $("#me").children().children(".test").addClass("check"); // 중간이나 마지막에도 선택자를 넣을 수 있다.
+
+        //나로부터 파생된 하위 모든 태그 검색
+        // $("#me").find(".test").addClass("check");
+
+        //조상 탐색
+        //- parentNode, parentElement
+        // $("#me").parent().addClass("check"); // 아버지 찾기 (주로 사용)
+        // $("#me").parents().addClass("check"); // 모든 조상 찾기
+        // $("#me").parentsUntil("#div1").addClass("check"); // 할아버지 직전에 멈춤 -> 아버지까지 찾음
+
+        // 형제 탐색
+        //- previousSibling, nextSibling
+
+        // $("#me").prev().addClass("check"); // 작은형
+        // $("#me").next().addClass("check"); // 동생
+
+        // $("#me").prev().prev().addClass("check"); // 큰형
+
+        // $("#me").prevAll().addClass("check"); // 큰형, 작은형
+        // $("#me").nextAll().addClass("check"); // 동생, 막내동생
+
+        // $("#me").prevUntil('조건')
+        // $("#me").nextUntil('조건')
+
+        $("#me").siblings().addClass("check"); // 모든 형제들
+
+        console.log();
+      });
+    </script>
+    <script src="../asset/js/scroll.js"></script>
+  </body>
+</html>
